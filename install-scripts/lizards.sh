@@ -33,5 +33,5 @@ chown -R www-data /var/www/file-storage
 cd /var/www/magento/pub
 sudo -E -u www-data magerun sys:setup:run
 mysql magento < /root/config-files/lizards-magento-connector.sql
-sudo -E -u www-data magerun cache:clean
 chown -R www-data /var/www/lizards/
+sudo -E -u www-data magerun cache:clean

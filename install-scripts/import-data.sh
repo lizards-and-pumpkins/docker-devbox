@@ -25,6 +25,7 @@ sudo -E -u www-data magerun cache:clean
 php /var/www/magento/pub/shell/lizards_and_pumpkins_export.php --all-products
 php /var/www/magento/pub/shell/lizards_and_pumpkins_export.php --all-categories
 php /var/www/magento/pub/shell/lizards_and_pumpkins_export.php --blocks
+chown -R www-data /var/www/file-storage
 sudo -E -u www-data /var/www/lizards/vendor/bin/lp import:template product_listing
 sudo -E -u www-data /var/www/lizards/vendor/bin/lp import:template product_detail_view
 ls -1 /var/www/share/*.xml | xargs -L 1 sudo -E -u www-data /var/www/lizards/vendor/bin/lp import:catalog -i
