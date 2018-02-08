@@ -1,5 +1,13 @@
 # Lizards & Pumpkins Docker DevBox
 
+
+## Run with docker-compose
+Edit `docker-compose.yaml` and set `BASE_URL`, `PORT` according to your needs.
+
+```
+docker-compose up -d
+```
+
 ## Run docker container
 
 ```
