@@ -1,7 +1,6 @@
 #!/bin/bash
 
 BASE_URL="127.0.0.1"
-PORT_STR=""
 
 source /etc/profile.d/lizards-env.sh
 
@@ -13,8 +12,6 @@ git clone --quiet https://github.com/lizards-and-pumpkins/sample-project.git .
 git checkout tags/$SAMPLE_PROJECT_VERSION -b $SAMPLE_PROJECT_VERSION
 rsync -r --chown=www-data:www-data src/magento-themes/magento-sample-theme/* /var/www/magento/pub/
 rsync -r --chown=www-data:www-data src/magento-extensions/LizardsAndPumpkins_DemoTheme/* /var/www/magento/pub/
-mv pub/index-lizards-and-pumpkins.php pub/index.php
-mv pub/lizards-and-pumpkins-rest-api.php pub/api.php
 rm pub/index-magento.php
 ln -s ../src/lizards-and-pumpkins/pub/{css,js,images} pub/
 cd pub
