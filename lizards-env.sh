@@ -13,6 +13,6 @@ if [ $PORT = 80 ]
 fi
 
 export LP_FILE_STORAGE_BASE_PATH="/var/www/file-storage"
-export LP_BASE_URL_TO_WEBSITE_MAP="http://${BASE_URL}:${PORT}/en/=en|http://${BASE_URL}:${PORT}/fr/=fr|http://${BASE_URL}:${PORT}/de/=de|http://${BASE_URL}/en/=en|http://${BASE_URL}/fr/=fr|http://${BASE_URL}/de/=de|http://${BASE_URL}/=en|http://${BASE_URL}::${PORT}/=en"
+export LP_BASE_URL_TO_WEBSITE_MAP="http://${BASE_URL}:${PORT}/en/=en|http://${BASE_URL}:${PORT}/fr/=fr|http://${BASE_URL}:${PORT}/de/=de|http://${BASE_URL}/en/=en|http://${BASE_URL}/fr/=fr|http://${BASE_URL}/de/=de|http://${BASE_URL}/=en|http://${BASE_URL}:${PORT}/=en"
 export LP_LOG_FILE_PATH="/var/www/lizards/var/log/system.log"
 export LP_MEDIA_BASE_PATH="/var/www/lizards/pub/media"
