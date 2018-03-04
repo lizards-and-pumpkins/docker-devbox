@@ -4,7 +4,7 @@ BASE_URL="127.0.0.1"
 
 source /etc/profile.d/lizards-env.sh
 
-SAMPLE_PROJECT_VERSION=2017-11-09-01
+SAMPLE_PROJECT_VERSION=2018-02-25-01
 
 echo "Cloning https://github.com/lizards-and-pumpkins/sample-project.git"
 cd /var/www/lizards
