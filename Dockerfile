@@ -3,6 +3,7 @@ FROM ubuntu:16.04
 LABEL Description="Lizards and Pumpkins Base Image Ubuntu 16.04" Vendor="Lizards and Pumpkins" Version="${version}" Maintainer="tl@scale.sc"
 ENV TINI_VERSION v0.15.0
 ENV PORT 80
+ENV PROTO http
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 ADD supervisor/ /etc/supervisor/
 ADD apache2/ /etc/apache2/

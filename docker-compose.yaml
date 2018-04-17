@@ -2,10 +2,11 @@ version: "2"
 
 services:
   lizards:
-    image: lizardsandpumpkins/devbox:0.3
+    image: lizardsandpumpkins/devbox:0.4
     environment:
       BASE_URL: 127.0.0.1
       PORT: 8080
+      PROTO: http
     ports:
       - 8080:80
     volumes:

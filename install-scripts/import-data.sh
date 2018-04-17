@@ -8,14 +8,16 @@ if [ -f /root/.import-data.lock ]
 sleep 10
 
 # set base url in magento
-# $PORT and $BASE_URL need to be ENV Variables passed to "docker run"
+# $PORT $PROTO and $BASE_URL need to be ENV Variables passed to "docker run"
 if [ $PORT = 80 ]
   then
-    mysql -e "replace into core_config_data (path, value) values ('web/secure/base_url', 'http://${BASE_URL}}/');" magento
-    mysql -e "replace into core_config_data (path, value) values ('web/unsecure/base_url', 'http://${BASE_URL}/');" magento
+    mysql -e "replace into core_config_data (path, value) values ('web/secure/base_url', '${PROTO}://${BASE_URL}/');" magento
+    mysql -e "replace into core_config_data (path, value) values ('web/unsecure/base_url', '${PROTO}://${BASE_URL}/');" magento
+    mysql -e "replace into core_config_data (path, value) values ('lizardsAndPumpkins/magentoconnector/api_url', '${PROTO}://${BASE_URL}/lizards-and-pumpkins-rest-api.php');" magento
   else
-    mysql -e "replace into core_config_data (path, value) values ('web/secure/base_url', 'http://${BASE_URL}:${PORT}/');" magento
-    mysql -e "replace into core_config_data (path, value) values ('web/unsecure/base_url', 'http://${BASE_URL}:${PORT}/');" magento
+    mysql -e "replace into core_config_data (path, value) values ('web/secure/base_url', '${PROTO}://${BASE_URL}:${PORT}/');" magento
+    mysql -e "replace into core_config_data (path, value) values ('web/unsecure/base_url', '${PROTO}://${BASE_URL}:${PORT}/');" magento
+    mysql -e "replace into core_config_data (path, value) values ('lizardsAndPumpkins/magentoconnector/api_url', '${PROTO}://${BASE_URL}:${PORT}/lizards-and-pumpkins-rest-api.php');" magento
 fi
 
 cd /var/www/magento/pub
