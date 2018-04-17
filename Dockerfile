@@ -35,7 +35,8 @@ sleep 10 ; \
 /root/install-scripts/magento.sh ; \
 /root/install-scripts/lizards.sh ; \
 rm -rf /var/run/apache2/apache2.pid ; \
-rm -rf /root/.import-data.lock
+rm -rf /root/.import-data.lock ; \
+/usr/bin/supervisorctl stop mysql
 
 ENTRYPOINT ["/tini", "--"]
 CMD ["/usr/local/sbin/start.sh"]

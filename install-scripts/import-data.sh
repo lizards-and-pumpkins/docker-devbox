@@ -5,7 +5,7 @@ if [ -f /root/.import-data.lock ]
     exit 0
   fi
 
-sleep 10
+sleep 30
 
 # set base url in magento
 # $PORT $PROTO and $BASE_URL need to be ENV Variables passed to "docker run"
